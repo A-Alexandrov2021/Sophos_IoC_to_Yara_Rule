@@ -1,3 +1,8 @@
+#############################
+# Author = Alexander Alexandrov
+# Last edited Nov 17, 2023
+#############################
+
 import csv
 import os
 import re
