@@ -1,3 +1,22 @@
+##################################################################################################
+# IoC (csv) to Yara (yar) Converter for Colab
+# Author = Alexander Alexandrov
+# Last edited Nov 17, 2023
+##################################################################################################
+##################################################################################################
+##Description: 
+#
+# If you have many Sophos IoC CSV files in one directory and you want to convert all of them to 
+# YARA rules, you can modify the script to loop through all CSV files in the directory and 
+# generate YARA rules for each file.
+#
+# Replace /path/to/sophos_ioc_files/ with the actual path to your directory containing Sophos 
+# IoC CSV files. This script will process all CSV files in the specified directory and generate
+# corresponding YARA rules. 
+
+# The resulting YARA rules will be saved in the specified output directory (/content/yara_rules/).
+###############################################################################################vv
+
 import csv
 import os
 import re
@@ -20,9 +39,9 @@ def convert_to_yara(ioc_type, data, note):
             $ioc = "{data}"
         condition:
             {ioc_type} == $ioc
-    }}
-    '''
-
+    }} 
+'''
+    
     return yara_rule
 
 def convert_sophos_iocs_to_yara(input_directory, output_directory):
